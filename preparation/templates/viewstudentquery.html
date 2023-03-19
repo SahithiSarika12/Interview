@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.a{
+  border: none;
+  background-color: green;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  margin-top: 70px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+table, th, td {
+  margin-top: 5%;
+  border: 1px solid black;
+}
+	
+	</style>
+</head>
+<body>
+	<div class="container">
+ 	{% if messages %}
+      {% for msg in messages %}
+       <h4 class="alert-success">{{msg}}</h4> 
+      {% endfor %}
+  	{% endif %}
+    
+ 	<div class="row">
+ 		<div class="col-sm-1"></div>
+ 		<div class="col-sm-9"></div>
+ 		<div class="table">
+	<table style="width:100%">
+		<tr>
+			<th>First_name</th>
+			<th>Branch</th>
+			<th>Email</th>
+			<th>Queries</th>
+		</tr>		
+		{% for i in o %}
+ 				<tr>
+ 					<td>{{i.First_name}}</td>
+          <td>{{i.Branch}}</td>
+ 					<td>{{i.Email}}</td>
+ 					<td>{{i.Query}}</td>
+		    </tr>
+		{% endfor %}
+	</table>
+	</div>
+ 		<div class="col-sm-1"></div>
+	</div>
+ </div>
+		<h2 align="center"><a href="{% url 'queryanswers' %}"><button class="a">Post Answer</button></a></h2>
+
+</body>
+</html>

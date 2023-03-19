@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+  .a{
+  border: none;
+  margin-top: 5%;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+	</style>
+</head>
+<body>
+	<h2 align="center"><a href="{% url 'tcs' %}"><button class="a" style="background-color: darkblue">TCS</button></a></h2>
+	<h2 align="center"><a href="{% url 'wipro' %}"><button class="a" style="background-color: orchid">WIPRO</button></a></h2>
+	<h2 align="center"><a href="{% url 'ibm' %}"><button class="a" style="background-color: black">IBM</button></a></h2>
+
+</body>
+</html>

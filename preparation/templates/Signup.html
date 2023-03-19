@@ -1,0 +1,80 @@
+ {% extends 'navbar.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sign up for students</title>
+	<style type="text/css">
+		#share-buttons img {
+	width: 35px;
+	padding: 5px;
+	border: 0;
+	box-shadow: 0;
+	display: inline;
+}
+	</style>
+</head>
+<div class="container">
+	<div class='card'>
+		<div class='card-header'><h4>Sign up</h4></div>
+		<div class='card-body' align="center">
+	<body style="background-color:grey">
+		<form action="{% url 'register' %}" method="POST">
+			{% csrf_token %}
+	
+			<input type="text" name="First name" placeholder="First name"><br><br>
+			
+			<input type="text" name="Last name" placeholder="Last name"><br><br>
+			
+			<input type="text" name="Email" placeholder="Email"><br><br>
+			
+			<input type="text" name="Branch" placeholder="Branch"><br><br>
+
+			<input type="radio" name="Gender">Male   <input type="radio" name="Gender">Female<br><br>
+			
+			<input type="date" name="Dob" placeholder="Dob"><br><br>
+
+    		
+    		<input type="password" name="Pwd" placeholder="Enter Password" name="Pwd"><br><br>
+
+    		<div class='card-footer'>
+				<input class='btn btn-success' type='submit' value='Create an account'>
+			</div><br><br>
+			
+
+			<div class="right-box">
+				<p><h3>---------or share with---------<h3></p>
+			</div>
+				
+	<!-- Email -->
+    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+    </a>
+ 
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+    
+    <!-- LinkedIn -->
+    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+    </a>
+
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    </a>
+
+
+		</div>	
+
+		</div>
+
+      	</div>
+
+		</form>
+
+	</body>
+</html>
+{% endblock %}

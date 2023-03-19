@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+
+    .a{
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-top: 70px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+    body{
+      background-color:#9FE2BF;
+    }
+
+  
+  </style>
+</head>
+<body>
+  <h2 align="center"><a href="{% url 'addadmin' %}"><button class="a">Add admin</button></a></h2>
+  <h2 align="center"><a href="{% url 'viewstudentquery' %}"><button class="a">View student queries</button></a></h2>
+  
+
+</body>
+</html>

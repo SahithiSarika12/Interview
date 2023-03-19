@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title color="black">Admin</title>
+</head>
+<body  style="color :black">
+<div class="container">
+	<div class='card'>
+		<div class='card-header'><h3 color="black">Admin</h3></div>
+		<div class='card-body'>
+<form action="{% url 'adminlogin' %}" method='POST'>
+	{% csrf_token %}
+	{% if messages %}
+		{% for msg in messages %}
+		<div class='alert alert-{{msg.tags}}'>{{msg}}</div>
+		{% endfor %}
+	{% endif %}
+	<p><label>User Name:&nbsp;</label><input type="text" name="username"></p>
+	<p><label>Password: &nbsp; &nbsp; </label><input type="password" name="password"></p>
+	<div class='card-footer'>
+		<input class='btn btn-success' type='submit' value='login'>
+	</div>
+</form>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+{% endblock %}

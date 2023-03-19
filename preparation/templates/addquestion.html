@@ -1,0 +1,45 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"> </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">body
+  	{
+  		background :black;
+  	}
+  	
+  	.btn btn-success{
+  	width: 50%;
+  	border: none;
+  	border-radius: 1rem;
+  	padding: 1.5%;
+  	background: #c0c0c0;
+  	font-width:800;
+  	color: #fff;
+  	cursor: pointer;
+  }
+
+
+  </style>
+</head>
+<body>
+	<form method="POST" action="{% url 'addquestion' %}">
+      {% csrf_token %}
+	<label style="color: white;margin-left: 30%;margin-top: 5%"><h4><b>Question&nbsp;&nbsp;&nbsp;</b></h4><textarea name="textmsg" type="text" class="from-control"  rows="7" cols="70"></textarea></label><br><br>
+  <label style="color: white;margin-left: 30%"><h4><b>Answer&nbsp;&nbsp;&nbsp;</b></h4><input type="url" name="answer"></label>
+  <div class="form-group">
+	<input type="submit" name="btnsubmit" class="btn btn-success" value="submit" style="margin-left:30%;margin-top: 3%">				
+  </div>
+					
+  
+</form>
+
+</body>
+</html>

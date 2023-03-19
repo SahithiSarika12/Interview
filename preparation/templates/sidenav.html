@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<style type="text/css">
+ 	body
+{
+  font-family: 'Roboto' , sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;;
+  text-decoration: none;
+}
+.h1{
+  margin-top: 100px;
+}
+.center {
+  display: block;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 450px;
+  margin-right: 550px;
+  width: 40%;
+}
+
+
+.sidebar{
+  position: fixed;
+  left: -250px;
+  width: 200px;
+  height: 100%;
+  background: #042331;
+  transition: all 0.5s ease;
+}
+
+.sidebar header{
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  background: #063146;
+  user-select: none;
+}
+
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 70px;
+  font-size: 16px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid black;
+  background: #042331;
+}
+
+ul li:hover a{
+  padding-left: 50px;
+}
+
+
+#check
+{
+	display: none;
+}
+
+label #btn,label #cancel
+{
+	position: all;
+	cursor:pointer;
+	background: #042331;
+	border-radius: 5px;
+}
+ 
+label #btn
+{
+	position:absolute;
+	left: 5px;
+	top: 5px;
+	font-size: 15px;
+	color: white;
+	padding: 4px 10px;
+	transition: all 0.5s;
+}
+
+label #cancel
+{
+	z-index: 1111;
+	left:-195px;
+	top: 12px;
+	font-size: 20px;
+	color: grey;
+	padding: 4px 9px;
+  transition: all 0.5s ease;
+}
+
+#check:checked ~ .sidebar{
+	left: 0;
+}
+
+#check:checked ~ .label #btn{
+	left: 250px;
+	opacity: 0;
+	pointer-events: none;
+
+}
+
+#check:checked ~ .label #cancel{
+	left: 195px;
+}
+
+#check:checked ~ section{
+  margin-left: 250px;
+
+}
+
+body{
+  background-image: url("https://images.unsplash.com/photo-1563518839049-f44a5e423f12?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 100% 150%;
+  height: 100vh;
+  transition: all 0.5s;
+}
+
+</style>
+ 	<title>Side Menu Bar</title>
+ 	<script src="https://kit.fontawesome.com/a076d05399.js" type="text/javascript"></script>
+ </head>
+ <body>
+
+ 	<input type="checkbox" id="check">
+<label for="check">
+	<i class="fas fa-bars" id="btn"></i>
+</label>
+
+ 
+<div class="sidebar">
+	<header>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		<label for="check">
+		<i class="fas fa-times" id="cancel"></i>
+		</label>
+	</header>
+	<ul>
+       <li>
+         <a href="{% url 'about' %}">ABOUT</a>
+       </li>
+       <li>
+          <a href="{% url 'companycse' %}">CSE/IT</a>
+        </li>
+       <li>
+          <a href="{% url 'companyece' %}">ECE</a>
+       </li>
+       <li>
+          <a href="{% url 'companyeee' %}">EEE</a>
+       </li>
+       <li>
+         <a href="{% url 'query' %}">QUERIES</a>
+       </li>
+       <li>
+         <a href="{% url 'answer' %}">ANSWER</a>
+       </li>
+    </ul>  
+</div>
+<h1 align="center" style="color:white;" >HELP YOU PREPARE FOR JOB INTERVIEWS</h1>
+
+  <img src="https://www.foxtekrs.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNERhQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--9cadd3fd6bed2a320b6139b192ccf68f4a8d8336/Interview%20Prep%20Image.jpg" class="center">
+{% block body %}
+{% endblock %}
+
+</body>
+</html>
+
+

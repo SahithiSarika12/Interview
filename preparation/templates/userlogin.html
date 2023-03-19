@@ -1,0 +1,42 @@
+{% extends 'navbar.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<style type="text/css">
+		h6
+		{
+	    	text-align: right;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+<div class='card'>
+	<div class='card-header'>Login Form</div>
+	<div class='card-body'>
+	<form class="box" action="{% url 'userlogin' %}" method="POST">
+		{% csrf_token %}
+	  {% if messages %}
+		{% for msg in messages %}
+		<div class='alert alert-{{msg.tags}}'>{{msg}}</div>
+		{% endfor %}
+	  {% endif %}
+		<h2>Login</h2>
+		<input type="text" name="email" placeholder="Email"><br><br>
+		<input type="password" name="password" placeholder="Password">	
+
+		<div class='card-footer'>
+		    <input class='btn btn-success' type='submit' value='login'>
+	    </div>
+	    <h6>Don't have an account?<a href="{% url 'register' %}">Sign up</a></h6>
+</form>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

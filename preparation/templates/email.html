@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.a{
+  border: none;
+  background-color: green;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-top: 70px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+  .p{
+
+
+  }
+	</style>
+</head>
+<body>
+	<form action="{% url 'email' %}" method="POST">
+		{% csrf_token %}
+	<p align="center"><label >Email:&nbsp;</label><input type="text" name="Email" style="width: 20%; margin-top: 5%;"></p>
+	<h2 align="center" style="margin-bottom:5%"><a href="#"><button class="a">Submit</button></a></h2>
+	</form>
+
+</body>
+</html>
